@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SORORUW | Stationery Shop</title>
+  <meta name="description" content="SORORUW — لوازم‌تحریر فانتزی و کیوت برای میزهای معمولی و انتخاب‌های غیرمعمولی.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#home">SORORUW <span>♡</span></a>
+    <nav>
+      <a href="#products">فروشگاه</a>
+      <a href="#about">درباره ما</a>
+      <a href="#contact">تماس</a>
+    </nav>
+    <button class="cart-btn" onclick="toggleCart()">🛒 <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <p class="eyebrow">stationery with a little magic ♡</p>
+        <h1>برای میزهای معمولی،<br><span>انتخاب‌های غیرمعمولی.</span></h1>
+        <p>لوازم‌تحریرهای کیوت و دوست‌داشتنی برای اینکه هر روزت کمی قشنگ‌تر بشه.</p>
+        <a class="primary-btn" href="#products">دیدن محصولات ✦</a>
+      </div>
+      <div class="hero-card">
+        <div class="sparkle">✦</div>
+        <div class="pen">✏️</div>
+        <div class="notebook">📔</div>
+        <div class="sticker">🌸</div>
+        <strong>SORORUW</strong>
+        <small>little things, big joy ♡</small>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-title">
+        <p class="eyebrow">explore</p>
+        <h2>دسته‌بندی‌ها</h2>
+      </div>
+      <div class="categories">
+        <a href="#products" class="category">🖊️<span>خودکار</span></a>
+        <a href="#products" class="category">📓<span>دفتر و پلنر</span></a>
+        <a href="#products" class="category">🎀<span>استیکر و فانتزی</span></a>
+        <a href="#products" class="category">🎁<span>پک هدیه</span></a>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-title">
+        <p class="eyebrow">our picks</p>
+        <h2>محصولات دوست‌داشتنی</h2>
+      </div>
+      <div class="products">
+        <article class="product">
+          <div class="product-image">🐰</div>
+          <h3>خودکار خرگوشی کیوت</h3>
+          <p>نوشتن باهاش یه حس خوبه!</p>
+          <div class="product-bottom"><strong>۸۹,۰۰۰ تومان</strong><button onclick="addToCart(1)">افزودن ♡</button></div>
+        </article>
+        <article class="product">
+          <div class="product-image">📔</div>
+          <h3>دفتر پلنر پاستلی</h3>
+          <p>برای برنامه‌های قشنگت.</p>
+          <div class="product-bottom"><strong>۱۸۹,۰۰۰ تومان</strong><button onclick="addToCart(2)">افزودن ♡</button></div>
+        </article>
+        <article class="product">
+          <div class="product-image">🌷</div>
+          <h3>پک استیکر فانتزی</h3>
+          <p>کمی رنگ برای دفترت.</p>
+          <div class="product-bottom"><strong>۷۹,۰۰۰ تومان</strong><button onclick="addToCart(3)">افزودن ♡</button></div>
+        </article>
+        <article class="product">
+          <div class="product-image">🎀</div>
+          <h3>پک هدیه SORORUW</h3>
+          <p>یک هدیه کوچولو و دوست‌داشتنی.</p>
+          <div class="product-bottom"><strong>۳۲۹,۰۰۰ تومان</strong><button onclick="addToCart(4)">افزودن ♡</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div>
+        <p class="eyebrow">a little about us</p>
+        <h2>SORORUW یعنی کمی جادو در چیزهای کوچیک ✨</h2>
+        <p>ما عاشق لوازم‌تحریرهای کیوت، میزهای مرتب و جزئیات کوچیکی هستیم که روزهای معمولی رو خاص‌تر می‌کنن.</p>
+      </div>
+      <div class="about-note">♡<br><span>made with love</span></div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <p class="eyebrow">say hello</p>
+      <h2>با ما در ارتباط باش</h2>
+      <p>برای دیدن محصولات جدید و پشت‌صحنه‌ها، ما رو در اینستاگرام دنبال کن.</p>
+      <a class="primary-btn" href="https://instagram.com/sororuwofficial" target="_blank">@sororuwofficial</a>
+    </section>
+  </main>
+
+  <footer>© SORORUW ♡ stationery with a little magic</footer>
+
+  <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+  <aside class="cart-drawer" id="drawer">
+    <div class="cart-head"><h2>سبد خرید ♡</h2><button onclick="toggleCart()">✕</button></div>
+    <div id="cartItems"></div>
+    <div class="cart-footer">
+      <div><span>مجموع</span><strong id="cartTotal">۰ تومان</strong></div>
+      <button class="primary-btn checkout" onclick="checkout()">ثبت سفارش</button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
